@@ -5,12 +5,12 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useState, useEffect } from 'react';
 
 const services = [
-    { title: "Interior", description: "We design and execute complete Luxury Interiors and Exteriors as per your taste and budget." },
-    { title: "Exterior", description: "Our team of expert designers and craftsmen work together to create stunning and functional spaces." },
-    { title: "Renovation", description: "We specialize in renovating old spaces and giving them a new life with our innovative designs." },
-    { title: "Vastu", description: "We provide Vastu consultancy services to ensure that your space is in harmony with nature." },
-    { title: "3D View", description: "We provide realistic 3D views of your space to help you visualize the final outcome." },
-    { title: "Turnkey", description: "We undertake turnkey projects, from design to execution, to provide a hassle-free experience." },
+    { title: "Turn Key Solutions", description: "We provide a hassle-free approach to designing and furnishing your space from start to finish. With our turnkey interior solution, you can expect a seamless process that covers everything from initial consultation to final installation." },
+    { title: "Colour Consultation", description: "Color sets the mood and tone of a space. Let us guide you in selecting the perfect palette to evoke the desired ambiance, complement your style, and enhance the overall design aesthetic." },
+    { title: "Built-in & Custom Furniture", description: "We offer custom design solutions tailored to their exact specifications. From custom cabinetry and built-in storage solutions to bespoke furniture pieces and artisanal finishes, we collaborate with clients to create one-of-a-kind elements that imbue the space with style and charm." },
+    { title: "Design Consultation", description: "Begin your design journey with a personalized consultation. We will work closely with you to understand your vision, preferences, and requirements, laying the foundation for a tailored design plan." },
+    { title: "Space planning", description: "Maximize the potential of your space with our meticulous space planning services. Whether it's optimizing functionality, improving flow, or maximizing storage, we'll create layouts that enhance usability and efficiency." },
+    { title: "Arts, Murals & Paintings", description: "Turn your space into a masterpiece with our customized arts, murals and painting services. We create personalized designs that reflect your vision. From murals to custom paintings, we bring your ideas to life." },
 ];
 
 const processSteps = [
@@ -52,9 +52,14 @@ export default function ServicesPage() {
     <div className="container mx-auto max-w-6xl py-12 px-4 md:px-6 md:py-24 bg-charcoal text-fog">
         <div className="text-center mb-16">
             <h1 className="text-4xl font-bold font-headline tracking-tight sm:text-5xl md:text-6xl">Our Services</h1>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                We offer a wide range of services to cater to all your interior and exterior design needs.
-            </p>
+            <div className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground space-y-4">
+              <p>
+                We've crafted services to transform your space into a harmonious blend of design, style, and functionality. Whether you're revamping a single room or undertaking a full-scale renovation, we will collaborate with you every step of the way to bring your vision to life.
+              </p>
+              <p>
+                With our comprehensive interior design services, your space will transcend mere functionality to become a reflection of your lifestyle and aspirations. Let us elevate your surroundings and transform the way you live, work, and play.
+              </p>
+            </div>
         </div>
 
         <section id="services-grid" className="mb-24">
