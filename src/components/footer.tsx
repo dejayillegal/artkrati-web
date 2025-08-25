@@ -1,4 +1,5 @@
 import { Logo } from './logo';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -6,9 +7,14 @@ export default function Footer() {
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0 px-4 md:px-6">
         <Logo />
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-          Built with admiration. This is an unofficial redesign concept.
+          Designing dreams, creating reality.
         </p>
-        <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Artkrati Graphite</p>
+        <div className="flex gap-4">
+          <Link className="text-muted-foreground hover:text-primary" href="#">Facebook</Link>
+          <Link className="text-muted-foreground hover:text-primary" href="#">Instagram</Link>
+          <Link className="text-muted-foreground hover:text-primary" href="#">LinkedIn</Link>
+        </div>
+        <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Aakrati</p>
       </div>
     </footer>
   );

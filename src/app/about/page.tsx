@@ -3,58 +3,46 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const teamMembers = [
-  { name: 'Alex Drake', role: 'Creative Director', avatar: 'https://picsum.photos/id/237/100/100' },
-  { name: 'Jasmine Kaur', role: 'Lead Designer', avatar: 'https://picsum.photos/id/238/100/100' },
-  { name: 'Leo Martinez', role: 'Head of Strategy', avatar: 'https://picsum.photos/id/239/100/100' },
-  { name: 'Sofia Chen', role: 'Art Director', avatar: 'https://picsum.photos/id/240/100/100' },
+  { name: 'AR. RAHUL KUMAR', role: 'ARCHITECT & INTERIOR DESIGNER', avatar: '/assets/images/team-1.png' },
+  { name: 'ER. VISHAL KUMAR', role: 'CIVIL ENGINEER', avatar: '/assets/images/team-2.png' },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto max-w-5xl py-12 px-4 md:px-6 md:py-24">
+    <div className="container mx-auto max-w-5xl py-12 px-4 md:px-6 md:py-24 bg-charcoal text-fog">
       <div className="space-y-12">
         <div className="text-center">
-          <h1 className="text-4xl font-bold font-headline tracking-tight sm:text-5xl md:text-6xl">About Artkrati</h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            We are a collective of artists, designers, and strategists passionate about creating beautiful and effective digital experiences.
-          </p>
+          <h1 className="text-4xl font-headline font-bold tracking-tight sm:text-5xl md:text-6xl">About Aakrati</h1>
         </div>
 
-        <div className="relative w-full h-96 overflow-hidden rounded-2xl">
-          <Image
-            src="https://picsum.photos/1200/800"
-            alt="Artkrati team working"
-            data-ai-hint="team office"
-            fill
-            className="object-cover"
-          />
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-bold font-headline">Our Mission</h2>
-            <p className="mt-4 text-muted-foreground">
-              To merge artistry with technology, crafting digital solutions that are not only visually stunning but also deeply functional and user-centric. We believe in a collaborative process, working closely with our clients to bring their unique visions to life. Our work is our craft, and we pursue it with passion and precision.
-            </p>
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold font-headline">Our Values</h2>
-            <ul className="mt-4 space-y-2 text-muted-foreground list-disc list-inside">
-              <li>Creativity: Pushing boundaries and exploring new ideas.</li>
-              <li>Collaboration: Working together to achieve shared goals.</li>
-              <li>Craftsmanship: Attention to detail and commitment to quality.</li>
-              <li>Integrity: Honest and transparent in all our interactions.</li>
-            </ul>
-          </div>
+        <div className="grid gap-12 md:grid-cols-2 items-center">
+            <div className="relative w-full h-96 overflow-hidden rounded-2xl">
+              <Image
+                src="/assets/images/about-us.jpeg"
+                alt="Aakrati team working"
+                data-ai-hint="team office"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-4">
+              <h2 className="text-3xl font-headline font-bold">Who We Are</h2>
+              <p className="text-lg text-muted-foreground">
+              We design and execute complete Luxury Interiors and Exteriors as per your taste and budget. We have a team of experienced and skilled designers and craftsmen who are passionate about creating beautiful and functional spaces. We have been in the industry for more than 5 years and have completed more than 100 projects. Our expertise lies in creating unique and personalized designs that reflect the personality and lifestyle of our clients.
+              </p>
+            </div>
         </div>
 
         <div>
           <h2 className="text-3xl font-bold font-headline text-center">Meet the Team</h2>
-          <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground text-center">
+            We have a team of experienced and skilled designers and craftsmen who are passionate about creating beautiful and functional spaces.
+          </p>
+          <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 justify-items-center">
             {teamMembers.map((member) => (
-              <Card key={member.name} className="overflow-hidden border-border/20 bg-card/50 backdrop-blur-lg text-center">
+              <Card key={member.name} className="overflow-hidden border-border bg-card/50 backdrop-blur-lg text-center w-full max-w-sm">
                 <CardHeader>
-                  <Avatar className="mx-auto h-24 w-24 border-2 border-primary">
+                  <Avatar className="mx-auto h-32 w-32 border-2 border-primary">
                     <AvatarImage src={member.avatar} />
                     <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
                   </Avatar>

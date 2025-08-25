@@ -17,9 +17,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Literata', 'serif'],
-        code: ['monospace'],
+        body: ['var(--font-inter)', 'sans-serif'],
+        headline: ['var(--font-newsreader)', 'serif'],
+        brand: ['Brother Home', 'system-ui'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -55,13 +55,11 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
-        },
+        charcoal: '#3C3E40',
+        fog: '#D9D9D9',
+        terracotta: '#D99282',
+        blush: '#D98F89',
+        mocha: '#8C6461',
       },
       borderRadius: {
         lg: 'var(--radius)',

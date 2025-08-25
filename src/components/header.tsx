@@ -8,18 +8,18 @@ import { cn } from '@/lib/utils';
 import { Logo } from './logo';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/projects', label: 'Projects' },
+  { href: '/projects-6', label: 'Work' },
+  { href: '/services-3', label: 'Services' },
   { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact-5', label: 'Contact' },
 ];
 
 export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
+      <div className="container flex h-20 max-w-screen-2xl items-center px-4 md:px-6">
         <Logo />
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 ml-auto">
           {navLinks.map((link) => (
@@ -27,14 +27,17 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                'transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary font-semibold' : 'text-muted-foreground'
+                'transition-colors hover:text-primary text-lg',
+                pathname.startsWith(link.href) ? 'text-primary font-semibold' : 'text-muted-foreground'
               )}
             >
               {link.label}
             </Link>
           ))}
         </nav>
+        <Button asChild className="hidden md:flex ml-4" variant="outline">
+          <Link href="/contact-5">Book Consultation</Link>
+        </Button>
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="ml-auto shrink-0 md:hidden">
@@ -54,13 +57,16 @@ export default function Header() {
                     href={link.href}
                     className={cn(
                       'transition-colors hover:text-primary',
-                      pathname === link.href ? 'text-primary font-semibold' : 'text-muted-foreground'
+                      pathname.startsWith(link.href) ? 'text-primary font-semibold' : 'text-muted-foreground'
                     )}
                   >
                     {link.label}
                   </Link>
                 ))}
               </nav>
+              <Button asChild className="mt-8" variant="outline">
+                <Link href="/contact-5">Book Consultation</Link>
+              </Button>
             </div>
           </SheetContent>
         </Sheet>
