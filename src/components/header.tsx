@@ -20,7 +20,12 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
       <div className="container flex h-20 max-w-screen-2xl items-center px-4 md:px-6">
-        <Logo />
+        <div className="flex flex-col">
+          <Link href="/" className="flex items-center gap-2" prefetch={false}>
+            <span className="text-3xl font-brand text-foreground">Aakrati</span>
+          </Link>
+          <div className="font-brand brand-tagline text-xs tracking-[.28em] uppercase text-muted-foreground ml-1">Interior Design Artist</div>
+        </div>
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 ml-auto">
           {navLinks.map((link) => (
             <Link
@@ -48,7 +53,12 @@ export default function Header() {
           <SheetContent side="right">
             <div className="flex flex-col h-full">
               <div className="mb-8">
-                <Logo />
+                <div className="flex flex-col">
+                  <Link href="/" className="flex items-center gap-2" prefetch={false}>
+                    <span className="text-3xl font-brand text-foreground">Aakrati</span>
+                  </Link>
+                  <div className="font-brand brand-tagline text-xs tracking-[.28em] uppercase text-muted-foreground ml-1">Interior Design Artist</div>
+                </div>
               </div>
               <nav className="grid gap-6 text-lg font-medium">
                 {navLinks.map((link) => (
