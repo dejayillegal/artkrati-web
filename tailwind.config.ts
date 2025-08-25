@@ -18,7 +18,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
-        headline: ['var(--font-newsreader)', 'serif'],
+        headline: ['var(--font-literata)', 'serif'],
         brand: ['Brother Home', 'system-ui'],
       },
       colors: {
@@ -67,7 +67,7 @@ export default {
         sm: 'calc(var(--radius) - 8px)',
       },
       boxShadow: {
-        'glow-primary': '0 0 15px 5px hsl(var(--primary) / 0.4)',
+        'glow-primary': '0 0 20px 0px hsl(var(--primary) / 0.5)',
         'glow-accent': '0 0 15px 5px hsl(var(--accent) / 0.4)',
       },
       keyframes: {

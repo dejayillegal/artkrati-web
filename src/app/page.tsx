@@ -1,40 +1,38 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Eye, MessageSquare, Star } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
 
 const featuredProjects = [
   {
-    title: "Modern & Minimalistic House",
+    title: "Terrace Kitchen",
+    location: "Mumbai",
+    tags: ["Residential", "Kitchen"],
+    size: "420 sq ft",
     imageUrl: "/assets/images/project-1.jpeg",
-    imageHint: "modern living room",
+    imageHint: "terrace kitchen",
+    slug: "/projects/modern-minimalistic-house"
   },
   {
-    title: "Luxury & Budget Friendly House",
+    title: "Wardrobe Suite",
+    location: "Bengaluru",
+    tags: ["Wardrobes", "Detail"],
+    size: "260 sq ft",
     imageUrl: "/assets/images/project-2.jpeg",
-    imageHint: "luxury bedroom",
+    imageHint: "wardrobe suite",
+    slug: "/projects/luxury-budget-friendly-house"
   },
   {
-    title: "Mr. Shailesh Kumar's Residence",
+    title: "Living Room",
+    location: "Delhi",
+    tags: ["Living", "Lighting"],
+    size: "520 sq ft",
     imageUrl: "/assets/images/project-3.jpeg",
-    imageHint: "residence exterior",
-  },
-  {
-    title: "Fashion Fusion",
-    imageUrl: "/assets/images/project-4.jpeg",
-    imageHint: "fashion boutique interior",
-  },
-  {
-    title: "Dental Clinic",
-    imageUrl: "/assets/images/project-5.jpeg",
-    imageHint: "modern dental clinic",
-  },
-  {
-    title: "Jewellery Showroom",
-    imageUrl: "/assets/images/project-6.jpeg",
-    imageHint: "jewellery showroom design",
+    imageHint: "living room",
+    slug: "/projects/mr-shailesh-kumar-residence"
   },
 ];
 
@@ -67,30 +65,42 @@ const testimonials = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-dvh bg-charcoal text-fog">
-      <section className="relative w-full h-[70vh] md:h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/assets/images/hero-bg.jpeg"
-            alt="Beautifully designed modern interior"
-            data-ai-hint="modern interior"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="container px-4 md:px-6 z-10">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              We design and execute complete Luxury Interiors and Exteriors as per your taste and budget.
+    <div className="flex flex-col min-h-dvh bg-background text-foreground">
+      <section className="container mx-auto py-12 px-4 md:px-6 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
+            <Image
+              src="https://picsum.photos/seed/redefining/800/1000"
+              alt="Redefining Spaces"
+              data-ai-hint="abstract interior architecture"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-6">
+            <p className="text-lg text-primary font-medium">Through Vision</p>
+            <h1 className="font-headline text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+              Redefining Spaces
             </h1>
-            <div className="mt-8 flex justify-center gap-4">
+            <p className="text-lg text-muted-foreground">
+              Where luxury meets functionality. We craft immersive environments that transcend traditional boundaries and inspire extraordinary living.
+            </p>
+            <div className="flex flex-wrap gap-4">
               <Button asChild size="lg">
-                <Link href="/projects-6">
-                  Our Work <ArrowRight className="ml-2 h-5 w-5" />
+                <Link href="/contact-5">
+                  <MessageSquare className="mr-2" /> Book Consultation
                 </Link>
               </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link href="/projects-6">
+                  <Eye className="mr-2" /> View Work
+                </Link>
+              </Button>
+            </div>
+            <div className="flex gap-4 pt-4">
+              <Badge variant="outline">Detail</Badge>
+              <Badge variant="outline">Materiality</Badge>
+              <Badge variant="outline">Light</Badge>
             </div>
           </div>
         </div>
@@ -98,13 +108,13 @@ export default function Home() {
 
       <section id="featured-projects" className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-left max-w-2xl mb-12">
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Featured Projects</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project, index) => (
-              <Link href="/projects-6" key={index} className="group block">
-                <Card className="relative h-full overflow-hidden rounded-2xl border-border bg-card/50 backdrop-blur-lg transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1">
+            {featuredProjects.map((project) => (
+              <Link href={project.slug} key={project.title} className="group block">
+                <Card className="h-full overflow-hidden rounded-2xl border-border bg-card transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1">
                   <CardHeader className="p-0">
                     <div className="relative h-80 w-full overflow-hidden">
                       <Image
@@ -114,11 +124,19 @@ export default function Home() {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     </div>
                   </CardHeader>
-                  <CardContent className="p-6 absolute bottom-0 w-full">
-                    <CardTitle className="font-headline text-2xl text-white">{project.title}</CardTitle>
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start">
+                        <div>
+                            <CardTitle className="font-headline text-2xl text-foreground">{project.title}</CardTitle>
+                            <p className="text-sm text-muted-foreground">{project.location}</p>
+                        </div>
+                        <p className="text-sm text-muted-foreground whitespace-nowrap">{project.size}</p>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                    </div>
                   </CardContent>
                 </Card>
               </Link>
@@ -127,14 +145,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 md:py-24 lg:py-32 bg-secondary/20">
+      <section className="py-12 md:py-24 lg:py-32 bg-secondary/10">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Services</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
-                  <Card key={index} className="border-border bg-card/50 backdrop-blur-lg p-6 text-center">
+                  <Card key={index} className="border-border bg-card p-6 text-center">
                       <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
                       <CardDescription className="mt-2 text-muted-foreground">{service.description}</CardDescription>
                   </Card>
@@ -162,12 +180,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 md:py-24 lg:py-32 bg-secondary/20">
+      <section className="py-12 md:py-24 lg:py-32 bg-secondary/10">
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl text-center mb-12">What our clients say</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-border bg-card/50 backdrop-blur-lg p-6">
+              <Card key={index} className="border-border bg-card p-6">
                 <div className="flex items-center mb-4">
                   <Avatar>
                     <AvatarImage src={testimonial.avatar} alt={testimonial.name} />

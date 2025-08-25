@@ -4,49 +4,49 @@
 
 @layer base {
   :root {
-    --background: 210 2% 24%; /* --charcoal */
+    --background: 30 3% 25%; /* --charcoal */
     --foreground: 0 0% 85%;   /* --fog */
-    --card: 210 2% 26%;
+    --card: 30 3% 27%;
     --card-foreground: 0 0% 85%;
-    --popover: 210 2% 24%;
+    --popover: 30 3% 25%;
     --popover-foreground: 0 0% 85%;
-    --primary: 13 50% 74%;      /* --terracotta */
-    --primary-foreground: 210 2% 10%;
-    --secondary: 5 19% 46%;    /* --mocha */
+    --primary: 12 55% 72%;      /* --terracotta */
+    --primary-foreground: 30 3% 10%;
+    --secondary: 9 24% 48%;    /* --mocha */
     --secondary-foreground: 0 0% 98%;
-    --muted: 5 19% 46%;
-    --muted-foreground: 0 0% 80%;
-    --accent: 4 50% 74%;        /* --blush */
+    --muted: 9 24% 48%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 4 55% 72%;        /* --blush */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 85% / 0.18;
-    --input: 0 0% 85% / 0.18;
-    --ring: 13 50% 74%;
+    --border: rgba(217, 217, 217, 0.18);
+    --input: rgba(217, 217, 217, 0.18);
+    --ring: 12 55% 72%;
     --radius: 18px;
     --gap: clamp(14px, 2.2vw, 24px);
   }
 
   .dark {
-    --background: 210 2% 24%;
+    --background: 30 3% 25%;
     --foreground: 0 0% 85%;
-    --card: 210 2% 26%;
+    --card: 30 3% 27%;
     --card-foreground: 0 0% 85%;
-    --popover: 210 2% 24%;
+    --popover: 30 3% 25%;
     --popover-foreground: 0 0% 85%;
-    --primary: 13 50% 74%;
-    --primary-foreground: 210 2% 10%;
-    --secondary: 5 19% 46%;
+    --primary: 12 55% 72%;
+    --primary-foreground: 30 3% 10%;
+    --secondary: 9 24% 48%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 5 19% 46%;
-    --muted-foreground: 0 0% 80%;
-    --accent: 4 50% 74%;
+    --muted: 9 24% 48%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 4 55% 72%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 85% / 0.18;
-    --input: 0 0% 85% / 0.18;
-    --ring: 13 50% 74%;
+    --border: rgba(217, 217, 217, 0.18);
+    --input: rgba(217, 217, 217, 0.18);
+    --ring: 12 55% 72%;
   }
 }
 

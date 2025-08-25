@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { Inter, Newsreader } from 'next/font/google';
+import { Inter, Literata } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,10 +12,10 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const newsreader = Newsreader({
+const literata = Literata({
   subsets: ['latin'],
-  weight: ['500', '600'],
-  variable: '--font-newsreader',
+  weight: ['500', '600', '700'],
+  variable: '--font-literata',
 });
 
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn('dark scroll-smooth', inter.variable, newsreader.variable)}>
+    <html lang="en" className={cn('dark scroll-smooth', inter.variable, literata.variable)}>
       <body className={cn('min-h-screen bg-background font-body antialiased')}>
         <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />

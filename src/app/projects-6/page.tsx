@@ -7,7 +7,7 @@ export default function ProjectsPage() {
     const filters = ["All", "Residential", "Commercial", "Office", "Showroom"];
 
   return (
-    <div className="container mx-auto max-w-7xl py-12 px-4 md:px-6 md:py-24 bg-charcoal text-fog">
+    <div className="container mx-auto max-w-7xl py-12 px-4 md:px-6 md:py-24 bg-background text-foreground">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold font-headline tracking-tight sm:text-5xl md:text-6xl">Our Work</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
