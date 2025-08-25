@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu } from 'lucide-react';
+import { Menu, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -41,7 +41,7 @@ export default function Header() {
           ))}
         </nav>
         <Button asChild className="hidden md:flex ml-4" variant="outline">
-          <Link href="/contact-5">Book Consultation</Link>
+          <Link href="/contact-5"><MessageSquare className="mr-2" />Book Consultation</Link>
         </Button>
         <Sheet>
           <SheetTrigger asChild>
@@ -75,7 +75,7 @@ export default function Header() {
                 ))}
               </nav>
               <Button asChild className="mt-8" variant="outline">
-                <Link href="/contact-5">Book Consultation</Link>
+                <Link href="/contact-5"><MessageSquare className="mr-2" />Book Consultation</Link>
               </Button>
             </div>
           </SheetContent>

@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, Phone, MessageSquare, User, Briefcase, Send } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ContactPage() {
@@ -26,24 +26,24 @@ export default function ContactPage() {
             <form className="space-y-6">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
+                  <Label htmlFor="name" className="flex items-center gap-2"><User /> Name</Label>
                   <Input id="name" placeholder="Your Name" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Phone</Label>
+                  <Label htmlFor="phone" className="flex items-center gap-2"><Phone /> Phone</Label>
                   <Input id="phone" type="tel" placeholder="Your Phone" />
                 </div>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="flex items-center gap-2"><Mail /> Email</Label>
                 <Input id="email" type="email" placeholder="your@email.com" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message" className="flex items-center gap-2"><Briefcase /> Message</Label>
                 <Textarea id="message" placeholder="Tell us about your project..." rows={5} />
               </div>
               <Button type="submit" className="w-full" size="lg">
-                Send Message
+                <Send className="mr-2" /> Send Message
               </Button>
             </form>
           </CardContent>
