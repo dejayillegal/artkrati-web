@@ -1,16 +1,16 @@
 "use client"
 import { Card, CardTitle, CardDescription } from '@/components/ui/card';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, KeyRound, Palette, Sofa, DraftingCompass, Maximize, Paintbrush2 } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useState, useEffect } from 'react';
 
 const services = [
-    { title: "Turn Key Solutions", description: "We provide a hassle-free approach to designing and furnishing your space from start to finish. With our turnkey interior solution, you can expect a seamless process that covers everything from initial consultation to final installation." },
-    { title: "Colour Consultation", description: "Color sets the mood and tone of a space. Let us guide you in selecting the perfect palette to evoke the desired ambiance, complement your style, and enhance the overall design aesthetic." },
-    { title: "Built-in & Custom Furniture", description: "We offer custom design solutions tailored to their exact specifications. From custom cabinetry and built-in storage solutions to bespoke furniture pieces and artisanal finishes, we collaborate with clients to create one-of-a-kind elements that imbue the space with style and charm." },
-    { title: "Design Consultation", description: "Begin your design journey with a personalized consultation. We will work closely with you to understand your vision, preferences, and requirements, laying the foundation for a tailored design plan." },
-    { title: "Space planning", description: "Maximize the potential of your space with our meticulous space planning services. Whether it's optimizing functionality, improving flow, or maximizing storage, we'll create layouts that enhance usability and efficiency." },
-    { title: "Arts, Murals & Paintings", description: "Turn your space into a masterpiece with our customized arts, murals and painting services. We create personalized designs that reflect your vision. From murals to custom paintings, we bring your ideas to life." },
+    { title: "Turn Key Solutions", description: "We provide a hassle-free approach to designing and furnishing your space from start to finish. With our turnkey interior solution, you can expect a seamless process that covers everything from initial consultation to final installation.", icon: KeyRound },
+    { title: "Colour Consultation", description: "Color sets the mood and tone of a space. Let us guide you in selecting the perfect palette to evoke the desired ambiance, complement your style, and enhance the overall design aesthetic.", icon: Palette },
+    { title: "Built-in & Custom Furniture", description: "We offer custom design solutions tailored to their exact specifications. From custom cabinetry and built-in storage solutions to bespoke furniture pieces and artisanal finishes, we collaborate with clients to create one-of-a-kind elements that imbue the space with style and charm.", icon: Sofa },
+    { title: "Design Consultation", description: "Begin your design journey with a personalized consultation. We will work closely with you to understand your vision, preferences, and requirements, laying the foundation for a tailored design plan.", icon: DraftingCompass },
+    { title: "Space planning", description: "Maximize the potential of your space with our meticulous space planning services. Whether it's optimizing functionality, improving flow, or maximizing storage, we'll create layouts that enhance usability and efficiency.", icon: Maximize },
+    { title: "Arts, Murals & Paintings", description: "Turn your space into a masterpiece with our customized arts, murals and painting services. We create personalized designs that reflect your vision. From murals to custom paintings, we bring your ideas to life.", icon: Paintbrush2 },
 ];
 
 const processSteps = [
@@ -66,6 +66,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {services.map((service, index) => (
                     <Card key={index} className="border-border bg-card/50 backdrop-blur-lg p-8 text-center flex flex-col items-center">
+                        <service.icon className="h-12 w-12 text-primary mb-4" />
                         <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
                         <CardDescription className="mt-2 text-muted-foreground flex-grow">{service.description}</CardDescription>
                     </Card>
