@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { ProjectCard } from '@/components/project-card';
 import { projects } from '@/lib/projects-data';
 import { Button } from '@/components/ui/button';
-import { Home, Refrigerator, Wardrobe, Sofa, Toy, Paintbrush, Search, DraftingCompass } from 'lucide-react';
+import { Home, Refrigerator, Shirt, Sofa, ToyBrick, Paintbrush, Search, DraftingCompass } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
 const allCategories = ["All", ...Array.from(new Set(projects.map(p => p.category)))];
@@ -16,9 +16,9 @@ const categoryIcons: { [key: string]: React.ElementType } = {
     Commercial: DraftingCompass,
     Showroom: Sofa,
     Kitchens: Refrigerator,
-    Wardrobes: Wardrobe,
+    Wardrobes: Shirt,
     Living: Sofa,
-    Kids: Toy,
+    Kids: ToyBrick,
     "Art & Murals": Paintbrush,
 };
 
