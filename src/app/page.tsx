@@ -34,32 +34,52 @@ const featuredProjects = [
     imageHint: "living room",
     slug: "/projects/mr-shailesh-kumar-residence"
   },
+  {
+    title: "Kids Studio",
+    location: "Pune",
+    tags: ["Kids", "Play"],
+    size: "180 sq ft",
+    imageUrl: "https://picsum.photos/seed/kids-studio/600/400",
+    imageHint: "kids play studio",
+    slug: "/projects/fashion-fusion",
+  },
+    {
+    title: "Stone Bath",
+    location: "Chennai",
+    tags: ["Bath", "Stone"],
+    size: "140 sq ft",
+    imageUrl: "https://picsum.photos/seed/stone-bath/600/400",
+    imageHint: "stone bathroom",
+    slug: "/projects/dental-clinic",
+  },
+    {
+    title: "Art & Mural",
+    location: "Ahmedabad",
+    tags: ["Art & Murals", "Feature"],
+    size: "300 sq ft",
+    imageUrl: "/assets/images/project-4.jpeg",
+    imageHint: "art mural hallway",
+    slug: "/projects/jewellery-showroom",
+  },
 ];
 
 const services = [
-    { title: "Interior", description: "We design and execute complete Luxury Interiors and Exteriors as per your taste and budget." },
-    { title: "Exterior", description: "Our team of expert designers and craftsmen work together to create stunning and functional spaces." },
-    { title: "Renovation", description: "We specialize in renovating old spaces and giving them a new life with our innovative designs." },
-    { title: "Vastu", description: "We provide Vastu consultancy services to ensure that your space is in harmony with nature." },
-    { title: "3D View", description: "We provide realistic 3D views of your space to help you visualize the final outcome." },
-    { title: "Turnkey", description: "We undertake turnkey projects, from design to execution, to provide a hassle-free experience." },
+    { title: "Residential Design", description: "Homes tailored to light, material and flow." },
+    { title: "Kitchens", description: "Ergonomic, durable, quietly luxurious." },
+    { title: "Wardrobes", description: "Joinery that respects fabric and form." },
+    { title: "Living Spaces", description: "Layered light, elegant comfort." },
+    { title: "Baths", description: "Stone-forward, calm, precise." },
+    { title: "Art & Murals", description: "Statement walls, crafted in-house." },
 ];
 
 const testimonials = [
   {
-    name: 'Mrs. Suman Devi',
-    avatar: '/assets/images/avatar-1.jpeg',
-    testimonial: 'Team is very supportive and have innovative ideas. They are very punctual and deliver the project on time. Also the quality of work is very good, I am very satisfied with their work. I would highly recommend them to everyone.'
+    name: 'A. Shah',
+    testimonial: 'They translated our needs into a home that feels inevitably right.'
   },
   {
-    name: 'Mr. Rakesh Kumar',
-    avatar: '/assets/images/avatar-2.jpeg',
-    testimonial: 'They did a fantastic job with our new office. The design is modern, functional, and exactly what we envisioned. The entire process was smooth and professional. Highly recommend their services.'
-  },
-  {
-    name: 'Mr. Sarvesh Kumar',
-    avatar: '/assets/images/avatar-3.jpeg',
-    testimonial: 'Working with Aakrati was a wonderful experience. They listened to our ideas and transformed our home into a beautiful and comfortable living space. Their attention to detail is commendable.'
+    name: 'R. Menon',
+    testimonial: 'Exquisite detailing. The kitchen works as beautifully as it looks.'
   }
 ];
 
@@ -114,7 +134,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => (
               <Link href={project.slug} key={project.title} className="group block">
-                <Card className="h-full overflow-hidden rounded-2xl border-border bg-card transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1">
+                <Card className="h-full overflow-hidden rounded-2xl border-border bg-card/50 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1">
                   <CardHeader className="p-0">
                     <div className="relative h-80 w-full overflow-hidden">
                       <Image
@@ -147,12 +167,12 @@ export default function Home() {
 
       <section className="py-12 md:py-24 lg:py-32 bg-secondary/10">
         <div className="container px-4 md:px-6">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-left max-w-2xl mb-12">
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Services</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => (
-                  <Card key={index} className="border-border bg-card p-6 text-center">
+                  <Card key={index} className="border-border bg-card/50 p-6">
                       <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
                       <CardDescription className="mt-2 text-muted-foreground">{service.description}</CardDescription>
                   </Card>
@@ -163,18 +183,27 @@ export default function Home() {
 
       <section className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-10 lg:grid-cols-2 items-center">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Our Philosophy</h2>
+          <div className="text-left max-w-2xl mb-12">
+             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Studio Philosophy</h2>
+          </div>
+          <div className="grid gap-10 lg:grid-cols-3">
+            <div className="space-y-2">
+              <h3 className="text-2xl font-headline font-bold">Detail</h3>
               <p className="text-muted-foreground text-lg">
-                We believe that every space has a story to tell. Our philosophy is to create designs that are not just aesthetically pleasing but also functional and timeless. We work closely with our clients to understand their needs and bring their vision to life.
-              </p>
-              <p className="text-muted-foreground text-lg">
-                Our approach is rooted in a deep understanding of design principles, materials, and craftsmanship. We strive for excellence in every project, ensuring that the final result is a true reflection of our client's personality and style.
+                Every edge, seam and reveal is intentional—quiet rigor you can feel.
               </p>
             </div>
-            <div className="flex items-center justify-center">
-              <Image src="/assets/images/philosophy.jpeg" alt="design sketch" data-ai-hint="interior sketch" width={500} height={500} className="rounded-2xl object-cover" />
+            <div className="space-y-2">
+              <h3 className="text-2xl font-headline font-bold">Materiality</h3>
+              <p className="text-muted-foreground text-lg">
+                Wood, stone and linen layered with restraint for lasting calm.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-2xl font-headline font-bold">Light</h3>
+              <p className="text-muted-foreground text-lg">
+                We choreograph light for golden-hour serenity throughout the day.
+              </p>
             </div>
           </div>
         </div>
@@ -182,23 +211,12 @@ export default function Home() {
 
       <section className="py-12 md:py-24 lg:py-32 bg-secondary/10">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl text-center mb-12">What our clients say</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl text-left mb-12">Testimonials</h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-border bg-card p-6">
-                <div className="flex items-center mb-4">
-                  <Avatar>
-                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <div className="ml-4">
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <div className="flex text-yellow-400">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-muted-foreground">{testimonial.testimonial}</p>
+              <Card key={index} className="border-none bg-transparent shadow-none p-6">
+                <p className="text-xl font-medium">"{testimonial.testimonial}"</p>
+                <p className="text-muted-foreground mt-4">- {testimonial.name}</p>
               </Card>
             ))}
           </div>
