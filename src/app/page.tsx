@@ -90,9 +90,9 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
             <Image
-              src="https://picsum.photos/seed/hero-main/1200/800"
+              src="https://picsum.photos/seed/hero-final/1200/800"
               alt="Redefining Spaces"
-              data-ai-hint="modern living room"
+              data-ai-hint="modern living room interior"
               fill
               className="object-cover"
             />
