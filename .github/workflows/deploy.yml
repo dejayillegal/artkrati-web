@@ -35,7 +35,6 @@ jobs:
           NODE_ENV: production
         run: |
           npx --no-install next build
-          npx --no-install next export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
