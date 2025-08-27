@@ -67,7 +67,7 @@ export const projects: Project[] = [
     longDescription: 'The goal for Fashion Fusion was to create a retail environment that was as stylish as the clothes it housed. We used bold colors, unique fixtures, and dynamic lighting to create an immersive and memorable shopping experience.',
     imageUrl: 'https://picsum.photos/seed/fashion-fusion/600/400',
     imageHint: 'fashion boutique interior',
-    category: 'Commercial',
+    category: 'Kids',
     location: "Pune",
     tags: ["Kids", "Play", "Vibrant"],
     images: [
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     imageHint: 'modern dental clinic',
     category: 'Commercial',
     location: "Chennai",
-    tags: ["Bath", "Stone", "Calm"],
+    tags: ["Commercial", "Calm"],
     images: [
       { url: 'https://picsum.photos/seed/dental-clinic-a/600/400', hint: 'reception area' },
       { url: 'https://picsum.photos/seed/dental-clinic-b/600/400', hint: 'treatment room' },

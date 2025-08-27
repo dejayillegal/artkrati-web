@@ -5,12 +5,12 @@ import { Menu, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { Logo } from './logo';
 
 const navLinks = [
   { href: '/projects-6', label: 'Work' },
   { href: '/services-3', label: 'Services' },
   { href: '/about', label: 'About' },
+  { href: '/testimonials', label: 'Testimonials' },
   { href: '/contact-5', label: 'Contact' },
 ];
 

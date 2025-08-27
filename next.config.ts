@@ -30,11 +30,6 @@ const nextConfig: NextConfig = {
         source: '/contact',
         destination: '/contact-5',
         permanent: true,
-      },
-       {
-        source: '/projects',
-        destination: '/projects-6',
-        permanent: true,
       }
     ]
   },
