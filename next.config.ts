@@ -1,9 +1,10 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
+
+const isProd = process.env.NODE_ENV === 'production';
 
 const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? '';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   output: 'export',
   basePath: process.env.NODE_ENV === 'production' ? `/${repo}` : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? `/${repo}/` : '',
@@ -36,6 +37,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // 👇 This fixes 404s on GitHub Pages
+  basePath: isProd ? '/artkrati-web' : '',
+  assetPrefix: isProd ? '/artkrati-web/' : '',
 };
 
 export default nextConfig;
