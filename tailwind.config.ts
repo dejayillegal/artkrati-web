@@ -19,7 +19,6 @@ export default {
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
         headline: ['var(--font-literata)', 'serif'],
-        brand: ['Brother Home', 'system-ui'],
       },
       colors: {
         background: 'hsl(var(--background))',

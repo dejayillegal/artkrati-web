@@ -12,7 +12,7 @@ const featuredProjects = [
     location: "Mumbai",
     tags: ["Residential", "Kitchen"],
     size: "420 sq ft",
-    imageUrl: "/assets/images/project-1.jpeg",
+    imageUrl: "https://picsum.photos/seed/terrace-kitchen/600/400",
     imageHint: "terrace kitchen",
     slug: "/projects/modern-minimalistic-house"
   },
@@ -21,7 +21,7 @@ const featuredProjects = [
     location: "Bengaluru",
     tags: ["Wardrobes", "Detail"],
     size: "260 sq ft",
-    imageUrl: "/assets/images/project-2.jpeg",
+    imageUrl: "https://picsum.photos/seed/wardrobe-suite/600/400",
     imageHint: "wardrobe suite",
     slug: "/projects/luxury-budget-friendly-house"
   },
@@ -30,7 +30,7 @@ const featuredProjects = [
     location: "Delhi",
     tags: ["Living", "Lighting"],
     size: "520 sq ft",
-    imageUrl: "/assets/images/project-3.jpeg",
+    imageUrl: "https://picsum.photos/seed/living-room/600/400",
     imageHint: "living room",
     slug: "/projects/mr-shailesh-kumar-residence"
   },
@@ -57,7 +57,7 @@ const featuredProjects = [
     location: "Ahmedabad",
     tags: ["Art & Murals", "Feature"],
     size: "300 sq ft",
-    imageUrl: "/assets/images/project-4.jpeg",
+    imageUrl: "https://picsum.photos/seed/art-mural/600/400",
     imageHint: "art mural hallway",
     slug: "/projects/jewellery-showroom",
   },
@@ -141,7 +141,8 @@ export default function Home() {
                         src={project.imageUrl}
                         alt={project.title}
                         data-ai-hint={project.imageHint}
-                        fill
+                        width={600}
+                        height={400}
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>

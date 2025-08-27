@@ -57,11 +57,4 @@
   body {
     @apply bg-background text-foreground;
   }
-  @font-face {
-    font-family: "Brother Home";
-    src: url("/fonts/brother-home.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-  }
 }
