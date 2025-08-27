@@ -2,12 +2,14 @@ import type { NextConfig } from 'next';
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? '';
+// The name of the repository on GitHub. This is used for the basePath in production.
+const repo = 'artkrati-web';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? `/${repo}` : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? `/${repo}/` : '',
+  // 👇 This is needed for GitHub Pages
+  basePath: isProd ? `/${repo}` : '',
+  assetPrefix: isProd ? `/${repo}/` : '',
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -30,16 +32,13 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https',
+        protocol: 'httpshttps',
         hostname: 'storage.googleapis.com',
         port: '',
         pathname: '/**',
       },
     ],
   },
-  // 👇 This fixes 404s on GitHub Pages
-  basePath: isProd ? '/artkrati-web' : '',
-  assetPrefix: isProd ? '/artkrati-web/' : '',
 };
 
 export default nextConfig;
