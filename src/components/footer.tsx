@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="text-sm text-muted-foreground">© {new Date().getFullYear()} Artkrati Studio</div>
 
         <div className="flex items-center gap-4">
-            <span className="text-muted-foreground">WhatsApp: +91 90000 00000</span>
+            <span className="text-muted-foreground">WhatsApp: +91-9902382308</span>
             <Button asChild>
                 <Link href="/contact-5">
                     Discuss Your Project
