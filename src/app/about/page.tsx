@@ -29,12 +29,6 @@ const values = [
     }
 ];
 
-const teamMembers = [
-  { name: 'AR. RAHUL KUMAR', role: 'ARCHITECT & INTERIOR DESIGNER', avatar: '/assets/images/team-1.png' },
-  { name: 'ER. VISHAL KUMAR', role: 'CIVIL ENGINEER', avatar: '/assets/images/team-2.png' },
-  { name: 'Maya Chen', role: 'Material Specialist', avatar: 'https://picsum.photos/seed/maya/100/100', description: "Sourcing and sustainable finishes." },
-];
-
 export default function AboutPage() {
   return (
     <div className="bg-background text-foreground">
@@ -115,27 +109,6 @@ export default function AboutPage() {
             </div>
         </div>
 
-        <div className="bg-card/50 rounded-2xl p-8 lg:p-12 mb-16">
-            <h2 className="text-3xl font-headline font-bold mb-8 text-center">Core Team</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
-                {teamMembers.map((member) => (
-                    <Card key={member.name} className="bg-transparent border-none shadow-none text-center w-full max-w-xs">
-                        <CardHeader className="p-0 mb-4">
-                        <Avatar className="mx-auto h-24 w-24 border-2 border-primary">
-                            <AvatarImage src={member.avatar} alt={member.name} />
-                            <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                        </Avatar>
-                        </CardHeader>
-                        <CardContent className="p-0">
-                        <CardTitle className="text-xl font-medium">{member.name}</CardTitle>
-                        <p className="text-primary">{member.role}</p>
-                         {member.description && <p className="text-muted-foreground mt-2 text-sm">{member.description}</p>}
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
-        </div>
-        
          <div className="bg-card/50 rounded-2xl p-8 lg:p-12 text-center">
             <p className="text-lg text-muted-foreground mb-4">Consultations typically 30-45 minutes via video or in-studio.</p>
             <div className="flex justify-center gap-4">
