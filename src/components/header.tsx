@@ -55,9 +55,9 @@ export default function Header() {
               <div className="mb-8">
                 <div className="flex flex-col">
                   <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                    <span className="font-brand text-xl sm:text-2xl md:text-3xl text-foreground scale-50 origin-left">Aakrati</span>
+                    <span className="font-brand text-xl sm:text-2xl md:text-3xl text-foreground scale-60 origin-left">Aakrati</span>
                   </Link>
-                  <div className="font-sans text-xs tracking-[.28em] uppercase text-muted-foreground ml-1 scale-50 origin-left">Interior Design Artist</div>
+                  <div className="font-sans text-xs tracking-[.28em] uppercase text-muted-foreground ml-1 scale-60 origin-left">Interior Design Artist</div>
                 </div>
               </div>
               <nav className="grid gap-6 text-lg font-medium">
