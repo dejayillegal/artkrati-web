@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import { brotherHome } from '@/lib/fonts';
 
 
 export const metadata: Metadata = {
@@ -16,9 +17,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isProd = process.env.NODE_ENV === 'production';
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={cn('min-h-screen bg-background font-body antialiased')}>
+    <html
+      lang="en"
+      className={cn('dark scroll-smooth', isProd && 'prod', brotherHome.variable)}
+    >
+      <body
+        className={cn(
+          'min-h-screen bg-background font-body font-sans antialiased'
+        )}
+      >
         <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />
           <main className="flex-1">{children}</main>

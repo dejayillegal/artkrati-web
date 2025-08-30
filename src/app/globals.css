@@ -1,3 +1,6 @@
+:root { --asset-prefix: ; }
+html.prod { --asset-prefix: /artkrati-web; }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   basePath: isProd ? `/${repo}` : '',
   assetPrefix: isProd ? `/${repo}/` : '',
+  trailingSlash: true,
   typescript: {
     ignoreBuildErrors: true, // ✅ allows CI to pass, but keep tsc locally
   },
