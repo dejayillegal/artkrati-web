@@ -1,42 +1,24 @@
 import type { NextConfig } from 'next';
 
 const isProd = process.env.NODE_ENV === 'production';
-
-// The name of the repository on GitHub. This is used for the basePath in production.
 const repo = 'artkrati-web';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  // 👇 This is needed for GitHub Pages
   basePath: isProd ? `/${repo}` : '',
   assetPrefix: isProd ? `/${repo}/` : '',
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // ✅ allows CI to pass, but keep tsc locally
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // ✅ allows CI to pass, but run next lint locally
   },
   images: {
-    unoptimized: true,
+    unoptimized: true, // ✅ required for GitHub Pages
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'storage.googleapis.com',
-        port: '',
-        pathname: '/**',
-      },
+      { protocol: 'https', hostname: 'placehold.co', pathname: '/**' },
+      { protocol: 'https', hostname: 'picsum.photos', pathname: '/**' },
+      { protocol: 'https', hostname: 'storage.googleapis.com', pathname: '/**' },
     ],
   },
 };
