@@ -7,9 +7,11 @@ import readline from 'node:readline';
 
 const DL_URL = 'https://dl.dafont.com/dl/?f=brother_home';
 const OUT_DIR = 'public/fonts';
-const OUT_TTF = join(OUT_DIR, 'BrotherHome.ttf');
+const OUT_FONT_BASENAME = 'BrotherHome';
 const OUT_LICENSE = join(OUT_DIR, 'BrotherHome.LICENSE.txt');
 const TMP_ZIP = join(OUT_DIR, 'brother_home.zip');
+
+const getOutPath = (ext: '.ttf' | '.otf') => join(OUT_DIR, `${OUT_FONT_BASENAME}${ext}`);
 
 const prompt = (q: string) =>
   new Promise<string>(res => {
@@ -46,23 +48,29 @@ const prompt = (q: string) =>
     console.error('Download failed: HTTP ' + res.status);
     process.exit(1);
   }
+  const body = res.body as NodeJS.ReadableStream;
   await new Promise<void>((resolve, reject) => {
     const file = createWriteStream(TMP_ZIP);
-    res.body.pipe(file);
-    res.body.on('error', reject);
+    body.pipe(file);
+    body.on('error', reject);
     file.on('finish', () => file.close(() => resolve()));
   });
 
-  console.log('Extracting TTF...');
+  console.log('Extracting font...');
   const zip = new AdmZip(TMP_ZIP);
-  const entries = zip.getEntries();
-  const ttfEntry = entries.find(e => e.entryName.toLowerCase().endsWith('.ttf'));
-  if (!ttfEntry) {
-    console.error('No .ttf found in ZIP.');
+  const entries: any[] = zip.getEntries();
+  const fontEntry = entries.find((e: any) =>
+    ['.ttf', '.otf'].some(ext => (e.entryName as string).toLowerCase().endsWith(ext))
+  );
+  if (!fontEntry) {
+    console.error('No .ttf or .otf found in ZIP.');
     process.exit(1);
   }
-  const data = ttfEntry.getData();
-  writeFileSync(OUT_TTF, data);
+  const lowerName = fontEntry.entryName.toLowerCase();
+  const ext = (lowerName.endsWith('.otf') ? '.otf' : '.ttf') as '.ttf' | '.otf';
+  const outPath = getOutPath(ext);
+  const data = fontEntry.getData();
+  writeFileSync(outPath, data);
 
   const licenseText = `Brother Home — downloaded from dafont
 Source: https://www.dafont.com/brother-home.font
@@ -74,5 +82,5 @@ Download: ${DL_URL}
 - This project does not alter or relicense the font; it keeps the original file and provenance.`;
   writeFileSync(OUT_LICENSE, licenseText);
 
-  console.log(`Done. Wrote:\n- ${OUT_TTF}\n- ${OUT_LICENSE}`);
+  console.log(`Done. Wrote:\n- ${outPath}\n- ${OUT_LICENSE}`);
 })();
