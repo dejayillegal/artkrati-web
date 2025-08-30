@@ -22,7 +22,7 @@ export default function Header() {
       <div className="container flex h-20 max-w-screen-2xl items-center px-4 md:px-6">
         <div className="flex flex-col">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <span className="text-4xl font-brand text-foreground">Aakrati</span>
+            <span className="font-brand text-3xl sm:text-4xl md:text-5xl text-foreground">Aakrati</span>
           </Link>
           <div className="font-sans text-xs tracking-[.28em] uppercase text-muted-foreground ml-1">Interior Design Artist</div>
         </div>
@@ -55,7 +55,7 @@ export default function Header() {
               <div className="mb-8">
                 <div className="flex flex-col">
                   <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                    <span className="text-4xl font-brand text-foreground">Aakrati</span>
+                    <span className="font-brand text-3xl sm:text-4xl md:text-5xl text-foreground">Aakrati</span>
                   </Link>
                   <div className="font-sans text-xs tracking-[.28em] uppercase text-muted-foreground ml-1">Interior Design Artist</div>
                 </div>
