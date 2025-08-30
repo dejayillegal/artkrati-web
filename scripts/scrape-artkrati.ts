@@ -42,7 +42,7 @@ const saveImage = async (url: string, subdir: string) => {
   return `/assets/artkrati/${subdir}/${name}`;
 };
 
-const extractText = ($el: cheerio.Cheerio) =>
+const extractText = ($el: any) =>
   $el.text().replace(/\s+\n/g, '\n').replace(/\s{2,}/g, ' ').trim();
 
 const writeMDX = (path: string, data: any, body: string) => {
@@ -79,7 +79,7 @@ const load = async (url: string) => {
   // PORTFOLIO
   const $gal = await load(`${SITE}/projects-6`);
   const items: { src: string; alt: string; caption: string }[] = [];
-  $gal('img').each((_i, el) => {
+  $gal('img').each((_i: number, el: any) => {
     const src = $gal(el).attr('src') || '';
     const alt = $gal(el).attr('alt') || '';
     const caption =
