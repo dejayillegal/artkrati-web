@@ -2,11 +2,7 @@ import type {Config} from 'tailwindcss';
 
 export default {
   darkMode: ['class'],
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{ts,tsx}', './content/**/*.{md,mdx}', './app/**/*.{ts,tsx}'],
   theme: {
     container: {
       center: true,
@@ -19,7 +15,7 @@ export default {
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
         headline: ['var(--font-literata)', 'serif'],
-        brand: ['var(--font-great-vibes)', 'cursive'],
+        brand: ['var(--font-brotherhome)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
