@@ -4,11 +4,12 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-
+import { brotherHome } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   title: 'Aakrati Interior Design Artist',
-  description: 'Aakrati Interior Design Artist - We design and execute complete Luxury Interiors and Exteriors as per your taste and budget.',
+  description:
+    'Aakrati Interior Design Artist - We design and execute complete Luxury Interiors and Exteriors as per your taste and budget.',
 };
 
 export default function RootLayout({
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className={cn('dark scroll-smooth', brotherHome.variable)}>
       <body className={cn('min-h-screen bg-background font-body antialiased')}>
         <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />
