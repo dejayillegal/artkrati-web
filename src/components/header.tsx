@@ -23,6 +23,8 @@ export default function Header() {
         <div className="flex flex-col">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
             <span className="font-brand text-2xl sm:text-3xl md:text-4xl text-foreground">Aakrati</span>
+
+            <span className="font-brand text-3xl sm:text-4xl md:text-5xl text-foreground">Aakrati</span>
           </Link>
           <div className="font-sans text-xs tracking-[.28em] uppercase text-muted-foreground ml-1">Interior Design Artist</div>
         </div>
@@ -56,6 +58,7 @@ export default function Header() {
                 <div className="flex flex-col">
                   <Link href="/" className="flex items-center gap-2" prefetch={false}>
                     <span className="font-brand text-2xl sm:text-3xl md:text-4xl text-foreground">Aakrati</span>
+                    <span className="font-brand text-3xl sm:text-4xl md:text-5xl text-foreground">Aakrati</span>
                   </Link>
                   <div className="font-sans text-xs tracking-[.28em] uppercase text-muted-foreground ml-1">Interior Design Artist</div>
                 </div>
